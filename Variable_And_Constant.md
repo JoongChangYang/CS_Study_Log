@@ -48,7 +48,7 @@
   - 정적 변수로 선언된것은 기본적으로 0으로(int Type의 경우) 값이 초기화 된다.
 
     ``` c
-#include <stdio.h>
+    #include <stdio.h>
     
     static int someNumber;
     

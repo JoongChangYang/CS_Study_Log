@@ -4,9 +4,10 @@
 
 
 
-| 내용             | 자료                                                         |
-| ---------------- | ------------------------------------------------------------ |
-| C 언어 기본 개념 | [Hllo C](https://github.com/JoongChangYang/TIL_C/blob/main/Hello_C.md) |
+| 내용                | 자료                                                         |
+| ------------------- | ------------------------------------------------------------ |
+| C 언어 기본 개념    | [Hllo C](https://github.com/JoongChangYang/TIL_C/blob/main/Hello_C.md) |
+| 변수와 상수(자료형) | [Variable_And_Constant](https://github.com/JoongChangYang/TIL_C/blob/main/Variable_And_Constant.md) |
 
 
 
