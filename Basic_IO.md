@@ -6,9 +6,9 @@
 
 ## Contents
 
-- [입력]()
-- [출력]()
-- [형식 지정자]()
+- [입력](https://github.com/JoongChangYang/TIL_C/blob/main/Basic_IO.md#%EC%9E%85%EB%A0%A5input)
+- [출력](https://github.com/JoongChangYang/TIL_C/blob/main/Basic_IO.md#%EC%B6%9C%EB%A0%A5)
+- [형식 지정자](https://github.com/JoongChangYang/TIL_C/blob/main/Basic_IO.md#%ED%98%95%EC%8B%9D-%EC%A7%80%EC%A0%95%EC%9E%90)
 
 
 
