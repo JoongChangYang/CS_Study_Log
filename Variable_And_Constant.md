@@ -4,8 +4,8 @@
 
 ## Contents
 
-- [변수](https://github.com/JoongChangYang/TIL_C/blob/main/Variable_And_Constant.md#%EB%B3%80%EC%88%98variable)
-- [상수](https://github.com/JoongChangYang/TIL_C/blob/main/Variable_And_Constant.md#%EC%83%81%EC%88%98constant)
+- [변수](#%EB%B3%80%EC%88%98variable)
+- [상수](#%EC%83%81%EC%88%98constant)
 
 
 
