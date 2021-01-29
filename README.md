@@ -11,6 +11,8 @@
 |     기본 입출력     |              [Basic_IO](/Basic_IO.md)              |
 |       연산자        |              [Operator](/Operator.md)              |
 |       조건문        |           [Conditional](Conditional.md)            |
+|       반복문        |                  [Loop](/Loop.md)                  |
+|        함수         |              [Function](/Function.md)              |
 
 
 
