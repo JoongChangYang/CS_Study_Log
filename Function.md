@@ -11,7 +11,7 @@
 
 - 함수는 입력을 받아 처리한 뒤에 출력하는 구조를 가짐
 
-  ![Function_Concept](/Assets/Function_Concept.png)
+  ![Function_Concept](https://github.com/JoongChangYang/TIL_C/blob/main/Assets/Function_Concept.PNG)
 
 - 함수의 형태
 
