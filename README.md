@@ -15,7 +15,7 @@
 |        함수         |              [Function](/Function.md)              |
 |        배열         |                 [Array](/Array.md)                 |
 |       포인터        |               [Pointer](/Pointer.md)               |
-|        문자         |              [Character](/Character)               |
+|        문자         |             [Character](/Character.md)             |
 
 
 
