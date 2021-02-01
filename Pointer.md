@@ -53,54 +53,55 @@
 
 - 기본적인 포인터 선언과 접근
 
-``` c
-int someNumber = 5; // 변수 someNumber 선언
-
-int *pointer = &someNumber; // someNumber의 주소를 가리키는 포인터 변수 선언(여기서 사용하는 *은 포인터)
-
-printf("%d\n", *pointer); // 간접 참조 연산자(*)을 사용하여 pointer가 가리키는 someNumber의 주소값을 통해 값을 출력
+  ``` c
+  int someNumber = 5; // 변수 someNumber 선언
   
-// 결과: 5
-// 구조 : someNumber <- pointer(someNumber의 주소값을 가리키고있음)
-```
+  int *pointer = &someNumber; // someNumber의 주소를 가리키는 포인터 변수 선언(여기서 사용하는 *은 포인터)
+  
+  printf("%d\n", *pointer); // 간접 참조 연산자(*)을 사용하여 pointer가 가리키는 someNumber의 주소값을 통해 값을 출력
+    
+  // 결과: 5
+  // 구조 : someNumber <- pointer(someNumber의 주소값을 가리키고있음)
+  ```
 
-
+  
 
 - &연산자를 통한 주소값 접근
 
-``` c
-int array[] = {1, 2, 3, 4, 5, 6, 7};
-int i;
-for (i = 0; i < 7; i++) {
-  printf("%d\n", &array[i]); // 배열에서 하나씩 꺼내서 주소값을 찍어봄
-}
+  ``` c
+  int array[] = {1, 2, 3, 4, 5, 6, 7};
+  int i;
+  for (i = 0; i < 7; i++) {
+    printf("%d\n", &array[i]); // 배열에서 하나씩 꺼내서 주소값을 찍어봄
+  }
+    
+  /*
+  int 타입은 하나에 4byte이다.
+  따라서 자세히 보면 주소값이 4씩 차이나는것을 볼 수 있음
+  -272632832
+  -272632828
+  -272632824
+  -272632820
+  -272632816
+  -272632812
+  -272632808
+  */
+  ```
+
   
-/*
-int 타입은 하나에 4byte이다.
-따라서 자세히 보면 주소값이 4씩 차이나는것을 볼 수 있음
--272632832
--272632828
--272632824
--272632820
--272632816
--272632812
--272632808
-*/
-```
-
-
 
 - 포인터가 또다른 포인터를 가리키는것도 가능하다
+
   - 포인터의 개수만큼 `*` 연산자가 늘어남 
 
-``` c
-int a = 5; // 5 <- a
-int *b = &a; // a <- b
-int **c = &b; // b <- c
-printf("%d\n", **c); // 5
-```
+  ``` c
+  int a = 5; // 5 <- a
+  int *b = &a; // a <- b
+  int **c = &b; // b <- c
+  printf("%d\n", **c); // 5
+  ```
 
-
+  
 
 
 
