@@ -72,9 +72,9 @@
   printf("%d\n", someNumber); // 800
   
   // 한 자씩 받아서 파일의 끝의 개행문자를 만나면 입력을 멈추므로 항상 입력 버퍼를 비운다
-  // EOF -> End Of File의 약자로 파일의 끝(파일을 읽는다고 가정했을때)
   int temp; // 문자도 내부적으로 숫자이기 때문에 int 선언으로도 getchar()가 가능함
   while ((temp = getchar()) != EOF && temp != '\n') {}
+  // EOF -> End Of File의 약자로 파일의 끝(파일을 읽는다고 가정했을때)
   
   scanf("%c", &someChar); // 입력: c
   scanf("%c\n", someChar); // c
