@@ -14,6 +14,7 @@
 |       반복문        |                  [Loop](/Loop.md)                  |
 |        함수         |              [Function](/Function.md)              |
 |        배열         |                 [Array](/Array.md)                 |
+|       포인터        |               [Pointer](/Pointer.md)               |
 
 
 
