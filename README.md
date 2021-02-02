@@ -16,6 +16,7 @@
 |        배열         |                 [Array](/Array.md)                 |
 |       포인터        |               [Pointer](/Pointer.md)               |
 |        문자         |             [Character](/Character.md)             |
+|       문자열        |                [String](/String.md)                |
 
 
 
