@@ -17,7 +17,7 @@
 |            포인터             |               [Pointer](/Pointer.md)               |
 |             문자              |             [Character](/Character.md)             |
 |            문자열             |                [String](/String.md)                |
-| 컴퓨터가 변수를 처리하는 방법 |    [HandlingOfVariables](/HandlingOfVariables)     |
+| 컴퓨터가 변수를 처리하는 방법 |   [HandlingOfVariables](/HandlingOfVariables.md)   |
 
 
 
