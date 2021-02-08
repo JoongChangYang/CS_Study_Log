@@ -105,6 +105,7 @@ fclose(someFile); // 파일 닫기
 2. 소스코드 작성
 
    ``` c
+   #define _CRT_SECURE_NO_WARNINGS
    #include <stdio.h>
    #include <stdlib.h>
    #include <string.h>
@@ -133,14 +134,14 @@ fclose(someFile); // 파일 닫기
    
    		// 파일에서 읽어온 값들을 임시 변수에 할당
    		char tempName[10];
-   		strcpy(name, (students + i)->name);
-   		int temScore = (students + i)->score;
+   		strcpy(tempName, (students + i)->name);
+   		int tempScore = (students + i)->score;
    
    		// 총 점수에 읽어온 점수를 더해줌
-   		totalScore += temScore;
+   		totalScore += tempScore;
    
    		// 읽어온 문자열과 정수를 콘솔에 출력
-   		printf("이름: %s, 성적%d\n", tempName, temScore);
+   		printf("이름: %s, 성적%d\n", tempName, tempScore);
    	}
    	
    	// students 동적 메모리 할당 해제
@@ -153,7 +154,6 @@ fclose(someFile); // 파일 닫기
    	fclose(fp); // 파일 닫기
    
    	/*
-   	실
    	이름: 홍길동, 성적98
    	이름: 이순신, 성적84
    	이름: 유관순, 성적89
