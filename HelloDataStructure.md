@@ -83,7 +83,7 @@
     - **n<sup>2</sup>** : 약 1,000,000번의 연산
     - **n<sup>3</sup>** : 약 1,000,000,000번의 연산
     
-    <img src="https://github.com/JoongChangYang/TIL_C/blob/main/Assets/HelloDataStructure_TimeComplexity.PNG" width="30%">HelloDataStructure_TimeComplexity</img>
+    <img src="https://github.com/JoongChangYang/TIL_C/blob/main/Assets/HelloDataStructure_TimeComplexity.PNG" width="30%">
 
 - **시간 복잡도**를 표기할 때는 항상 큰 항과 계수만 표시한다
 
