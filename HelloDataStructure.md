@@ -48,6 +48,11 @@
 
 - **시간 복잡도**를 표현할 때는 최악의 경우를 나타내는 **Big-O** 표기법을 사용한다
 
+- **시간 복잡도**를 표기할 때는 항상 큰 항과 계수만 표시한다
+
+  **O(3n<sup>2</sup> + n)** = **O(n<sup>2</sup>)**
+  
+- **예시**
   - 다음 알고리즘은 **O<sub>(n)</sub>** 의 시간 복잡도를 가진다
 
     ``` c
@@ -85,9 +90,6 @@
     
     <img src="https://github.com/JoongChangYang/TIL_C/blob/main/Assets/HelloDataStructure_TimeComplexity.PNG" width="30%">
 
-- **시간 복잡도**를 표기할 때는 항상 큰 항과 계수만 표시한다
-
-  **O(3n<sup>2</sup> + n)** = **O(n<sup>2</sup>)**
 
 #### 공간 복잡도(Space Complexity)
 
