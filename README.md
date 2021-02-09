@@ -2,11 +2,18 @@
 
 > C 언어에 대해 공부하고 기록하는 공간
 
+## Contents
+
+- [Basic](#Basic)
+- [Data Structure](#Data-Structure)
 
 
-| 번호 |             내용              |                             자료                             |
+
+### Basic
+
+| 번호 |             내용              |                             링크                             |
 | :--: | :---------------------------: | :----------------------------------------------------------: |
-| 2 |       C 언어 기본 개념        |                    [Hllo C](/Hello_C.md)                     |
+| 2 |       C 개요       |                    [Hllo C](/Hello_C.md)                     |
 | 3 |      변수와 상수(자료형)      |      [Variable_And_Constant](/Variable_And_Constant.md)      |
 | 4 |          기본 입출력          |                   [Basic_IO](/Basic_IO.md)                   |
 | 5 |            연산자             |                   [Operator](/Operator.md)                   |
@@ -24,6 +31,14 @@
 | 17 | 구조체 | [Struct](/Struct.md) |
 | 18 | 파일 입출력 | [FileIO](/FileIO.md) |
 | 19 | 전처리기 | [Preprocesser](/Preprocesser.md) |
+
+
+
+### Data Structure
+
+| 번호 |     내용      |                     링크                     |
+| :--: | :-----------: | :------------------------------------------: |
+|  20  | 자료구조 개요 | [HelloDataStructure](/HelloDataStructure.md) |
 
 
 
