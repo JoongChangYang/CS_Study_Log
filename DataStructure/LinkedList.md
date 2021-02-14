@@ -1,4 +1,4 @@
-# 연결 리스트 (Linked list)
+# 연결 리스트 (Linked List)
 
 > 연결 리스트의 개념과 구현
 
@@ -7,7 +7,8 @@
 ## Contents
 
 - [개요](#개요)
-- [단일 연결 리스트](#단일-연결-리스트)
+- [단일 연결 리스트(Single Linked List)](#단일-연결-리스트)
+- [양방향 연결 리스트(Double Linked List)]()
 
 ### 개요
 
@@ -89,7 +90,7 @@ int main(void) {
 
 
 
-### 단일 연결 리스트
+### 단일 연결 리스트(Single Linked List)
 
 - 포인터를 이용해 단방향적으로 다음 노드를 가리킨다
 - 연결 리스트의 시작 노드를 **헤드(Head)** 라고 하며 별도로 관리 한다
@@ -165,6 +166,69 @@ void removeNode(Node* preNode) {
 	Node* removeNode = preNode->next; // 삭제할 노드를 이전 노드에서 할당 받는다
 	preNode->next = removeNode->next; // 이전 노드의 next에 삭제할 노드의 next를 할당
 	free(removeNode); // 삭제할 노드의 메모리 해제
+}
+```
+
+
+
+### 양방향 연결 리스트(Double Linked List)
+
+- 양방향 연결 리스트는 **머리(Head)** 와 **꼬리(Tail)** 를 모두 가진다
+- 양방향 연결 리스트의 각 노드는 **앞 노드** 와 **뒤 노드** 의 정보를 모두 저장한다
+
+<img src="https://github.com/JoongChangYang/TIL_C/blob/main/Assets/Double_Linked_List.PNG" width="70%">
+
+#### 기본 구현
+
+``` c
+typedef struct {
+	int data; // 실제 사용될 데이터
+	struct Node* prev; // 이전 노드를 가리킬 포인터 변수
+	struct Node* next; // 다음 노드를 가리킬 포인터 변수
+} Node;
+
+Node *head, *tail; // 연결리스트의 시작점과 끝점 노드
+```
+
+#### 노드 삽입
+
+<img src="https://github.com/JoongChangYang/TIL_C/blob/main/Assets/Double_Linked_List_InsertNode.PNG" width="70%">
+
+``` c
+// 오름차순 삽입 함수 예제코드
+void insertNode(int data) {
+	Node* node = (Node*)malloc(sizeof(Node)); // 삽입할 노드 메모리 동적 할당
+	node->data = data; // 삽입할 노드의 data 값 할당
+	
+	Node* current = head->next; // head의 next를 current로 지정
+	while (current->data < data && current != tail) {
+		// 현재 들어온 data보다 큰 값을 가진 노드가 나올때까지 current를 바꿔줌
+		current = current->next;
+	}
+
+	Node* prev = current->prev; // current를 삽입할 노드 이전 노드로 지정
+	prev->next = node; // prev의 next를 삽입할 노드로 할당
+	node->prev = prev; // 삽입할 노드의 prev를 prev로 할당
+	current->prev = node; // current의 prev를 삽입할 노드로 할당
+	node->next = current; // 삽입할 노드의 next를 current로 할당
+}
+```
+
+
+
+#### 노드 삭제
+
+<img src="https://github.com/JoongChangYang/TIL_C/blob/main/Assets/Double_Linked_List_RemoveNode.PNG" width="70%">
+
+``` c
+void removeNode(Node* removeNode) {
+	Node* prev = removeNode->prev; // 삭제할 노드의 prev 할당
+	Node* next = removeNode->next; // 삭제할 노드의 next 할당
+
+	prev->next = next; // prev의 next에 next 할당
+	next->prev = prev; // next의 prev에 prev 할당
+
+	free(removeNode); // 삭제할 노드 메모리 헤제
 }
 ```
 
