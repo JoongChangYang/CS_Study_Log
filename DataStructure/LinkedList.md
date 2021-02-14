@@ -7,8 +7,8 @@
 ## Contents
 
 - [개요](#개요)
-- [단일 연결 리스트(Single Linked List)](#단일-연결-리스트)
-- [양방향 연결 리스트(Double Linked List)]()
+- [단일 연결 리스트(Single Linked List)](##단일-연결-리스트single-linked-list)
+- [양방향 연결 리스트(Double Linked List)](#양방향-연결-리스트double-linked-list)
 
 ### 개요
 
