@@ -39,7 +39,7 @@
 | 번호 |     내용      |                            링크                            |
 | :--: | :-----------: | :--------------------------------------------------------: |
 |  20  | 자료구조 개요 | [HelloDataStructure](/DataStructure/HelloDataStructure.md) |
-|  21  |  연결 리스트  |         (LinkedList)(/DataStructure/LinkedList.md)         |
+|  21  |  연결 리스트  |         [LinkedList](/DataStructure/LinkedList.md)         |
 
 
 
