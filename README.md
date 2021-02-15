@@ -36,10 +36,11 @@
 
 ### Data Structure
 
-| 번호 |     내용      |                            링크                            |
-| :--: | :-----------: | :--------------------------------------------------------: |
-|  20  | 자료구조 개요 | [HelloDataStructure](/DataStructure/HelloDataStructure.md) |
-|  21  |  연결 리스트  |         [LinkedList](/DataStructure/LinkedList.md)         |
+|  번호  |     내용      |                            링크                            |
+| :----: | :-----------: | :--------------------------------------------------------: |
+|   20   | 자료구조 개요 | [HelloDataStructure](/DataStructure/HelloDataStructure.md) |
+| 21, 22 |  연결 리스트  |         [LinkedList](/DataStructure/LinkedList.md)         |
+|   23   |     스택      |              [Stack](/DataStructure/Stack.md)              |
 
 
 
