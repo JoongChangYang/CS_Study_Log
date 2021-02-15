@@ -116,7 +116,7 @@
   }
   ```
 
-- `strcmp(string1, string2)` : `string1` 이 `string2` 보다 사전적으로 앞에있으면 -1, 뒤에있으면 1을 반환
+- `strcmp(string1, string2)` : `string1` 이 `string2` 보다 사전적으로 앞에있으면 -1, 뒤에있으면 1을, 완전히 같다면 0 반환
 
   ``` c
   char myName[20] = "Aiden"; 
