@@ -43,24 +43,24 @@ int top = -1; // 스택에 들어가있는 데이터의 수를 나타낼 변수 
 void push(int data) {
 
 	if (top == SIZE - 1) { 
-        // 스택의 SIZE가 꽉 찼을 경우 스택 오버 플로우
+		// 스택의 SIZE가 꽉 찼을 경우 스택 오버 플로우
 		printf("스택 오버플로우가 발생했습니다.\n");
 		return;
 	}
 
-    // 스택의 맨 끝자리에 데이터를 넣어준다
+	// 스택의 맨 끝자리에 데이터를 넣어준다
 	stack[++top] = data;
 }
 
 int pop() {
 
 	if (top == -1) {
-        // 더이상 꺼낼 데이터가 없으면 스택 언더 플로우
+		// 더이상 꺼낼 데이터가 없으면 스택 언더 플로우
 		printf("스택 언더플로우가 발생했습니다.\n");
 		return -INF;
 	}
 	
-    // 스택에서 데이터를 꺼낸 후 top 변수 1차감
+	// 스택에서 데이터를 꺼낸 후 top 변수 1차감
 	return stack[top--];
 }
 
@@ -126,11 +126,11 @@ typedef struct {
 
 void push(Stack* stack, int data) {
 	
-    Node* node = (Node*)malloc(sizeof(Node)); // push할 노드 동적할당
+	Node* node = (Node*)malloc(sizeof(Node)); // push할 노드 동적할당
 	node->data = data; // push할 노드에 데이터 할당
 	node->next = stack->top; // push할 노드의 next를 스택의 top 할당
 	
-    stack->top = node; // 스택의 top에 push할 노드 할당
+	stack->top = node; // 스택의 top에 push할 노드 할당
 }
 
 int pop(Stack* stack) {
@@ -143,11 +143,11 @@ int pop(Stack* stack) {
 	Node* node = stack->top; // 스택의 top을 꺼내 할당
 	int data = node->data; // 반환할 데이터 세팅
 	
-    stack->top = node->next; // 스택의 top을 pop할 노드의 next로 교체
+	stack->top = node->next; // 스택의 top을 pop할 노드의 next로 교체
 	
-    free(node); // pop할 노드 메모리 해제
+	free(node); // pop할 노드 메모리 해제
 	
-    return data; // 데이터 반환
+	return data; // 데이터 반환
 }
 
 void show(Stack* stack) {
