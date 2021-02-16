@@ -29,7 +29,7 @@
 
 ## 구현
 
-> 미완성본 내용 추가 예정
+> 분석 후 내용 추가 예정
 
 ``` c
 #define _CRT_SECURE_NO_WARNINGS
@@ -51,7 +51,7 @@ void push(Stack* stack, char* data) {
 	strcpy(node->data, data);
 	node->next = stack->top;
 	stack->top = node;
-	printf("push: %s\n", data);
+	printf("push: %s\n", node->data);
 }
 
 char* getTop(Stack* stack) {
@@ -82,8 +82,8 @@ int getPriority(char* i) {
 	return 3;
 }
 
-int isOperator(char** s, int i) {
-	return !strcmp(s[i], "+") || !strcmp(s[i], "-") || !strcmp(s[i], "*") || !strcmp(s[i], "/");
+int isOperator(char* s) {
+	return !strcmp(s, "+") || !strcmp(s, "-") || !strcmp(s, "*") || !strcmp(s, "/");
 }
 
 // 후위 표기법으로 변환
@@ -91,8 +91,10 @@ char* transition(Stack* stack, char** s, int size) {
 	char result[1000] = "";
 
 	for (int i = 0; i < size; i++) {
-		
-		if (isOperator) {
+		printf("\n꺼낸 문자 : %c\n", *s[i]);
+		printf("현재까지의 result : %s\n", result);
+		if (isOperator(s[i])) {
+			printf("\nOperator\n");
 
 			while (stack->top != NULL && getPriority(getTop(stack)) >= getPriority(s[i])) {
 				strcat(result, pop(stack));
@@ -102,17 +104,22 @@ char* transition(Stack* stack, char** s, int size) {
 
 		}
 		else if (!strcmp(s[i], "(")) {
+			printf("\n(\n");
+
 			push(stack, s[i]);
 		}
-		else if (!strcmp, ")") {
+		else if (!strcmp(s[i], ")")) {
+			printf("\n)\n");
 
-			while (!strcmp(getTop(stack), "(")) {
+			while (strcmp(getTop(stack), "(")) {
 				strcat(result, pop(stack));
 				strcat(result, " ");
 			}
 			pop(stack);
 		}
 		else {
+			printf("\nelse\n");
+
 			strcat(result, s[i]);
 			strcat(result, " ");
 		}
@@ -135,7 +142,7 @@ void calculate(Stack* stack, char** s, int size) {
 
 	for (int i = 0; i < size; i++) {
 
-		if (isOperator) {
+		if (isOperator(s[i])) {
 			// atoi : 문자를 int형으로 변환하는 함수
 			x = atoi(pop(stack));
 			y = atoi(pop(stack));
@@ -147,48 +154,58 @@ void calculate(Stack* stack, char** s, int size) {
 			if (!strcmp(s[i], "/")) z = y / x;
 
 			char buffer[100];
-			sprintf(buffer, "&d", z);
+			sprintf(buffer, "%d", z);
 			push(stack, buffer);
 		}
 		else {
 			push(stack, s[i]);
 		}
 	}
-	printf("%s\n", pop(stack));
+	printf("계산 결과 : %s\n", pop(stack));
 }
 
 int main(void) {
 
 	Stack stack;
 	stack.top = NULL;
-	char solution[100] = "( ( 3 + 4 ) * 5 ) - 5 * 7 * 5 - 5 * 10";
+	char solution[100] = "( ( 3 + 4 ) * 5 ) - 5 * 7 * 5 - 5 * 10"; // -190
 	int size = 1;
 	for (int i = 0; i < strlen(solution); i++) {
 		if (solution[i] == ' ') size++;
 	}
-
-	char* ptr = strtok(solution, " ");
+	printf("solution : %s\n", solution);
+	char* solutionToken = strtok(solution, " ");
 	char** input = (char**)malloc(sizeof(char*) * size);
 
 	for (int i = 0; i < size; i++) {
 		input[i] = (char*)malloc(sizeof(char) * 100);
 	}
+	
 
 	for (int i = 0; i < size; i++) {
-		strcpy(input[i], ptr);
-		ptr = strtok(NULL, " ");
+		strcpy(input[i], solutionToken);
+		solutionToken = strtok(NULL, " ");
 	}
 
 	char solutionWithTransition[1000];
-	strcpy(solution, transition(&stack, input, size));
+	strcpy(solutionWithTransition, transition(&stack, input, size));
+	
 	printf("후위 표기법: %s\n", solutionWithTransition);
 
 	size = 1;
 
-	// ======================추가 예정==========================
-	for (int i = 0; i < strlen; i++) {
-
+	for (int i = 0; i < strlen(solutionWithTransition) - 1; i++) { // 마지막은 항상 공백이 들어가므로 1 빼기
+		if (solutionWithTransition[i] == ' ') size++;
 	}
+
+	char* solutionWithTransitionToken = strtok(solutionWithTransition, " ");
+
+	for (int i = 0; i < size; i++) {
+		strcpy(input[i], solutionWithTransitionToken);
+		solutionWithTransitionToken = strtok(NULL, " ");
+	}
+
+	calculate(&stack, input, size);
 
 	system("pause");
 	return 0;
