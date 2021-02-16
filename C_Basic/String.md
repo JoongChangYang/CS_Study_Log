@@ -116,7 +116,7 @@
   }
   ```
 
-- `strcmp(string1, string2)` : `string1` 이 `string2` 보다 사전적으로 앞에있으면 -1, 뒤에있으면 1을, 완전히 같다면 0 반환
+- `strcmp(string1, string2)` : `string1` 이 `string2` 보다 사전적으로 앞에있으면 `-1`, 뒤에있으면 `1`을, 완전히 같다면 `0` 반환
 
   ``` c
   char myName[20] = "Aiden"; 
@@ -154,13 +154,64 @@
 
   - 포함한다면 문자열을 찾은 주소 값 자체를 반환, 포함하지 않는다면 **NULL**을 반환
 
-    ``` c
-    char baseString[20] = "I like you"; 
-    char findString[20] = "like";
-    
-    printf("찾은 문자열: %s\n", strstr(baseString, findString));
-    /*
-    찾은 문자열: like you
-    like를 찾은 주소 값 자체를 반환하므로 "I like you" 에서 "like" 부터 뒤로 쭉 출력 -> "like you"
-    */
-    ```
+  ``` c
+  char baseString[20] = "I like you"; 
+  char findString[20] = "like";
+  
+  printf("찾은 문자열: %s\n", strstr(baseString, findString));
+  /*
+  찾은 문자열: like you
+  like를 찾은 주소 값 자체를 반환하므로 "I like you" 에서 "like" 부터 뒤로 쭉 출력 -> "like you"
+  */
+  ```
+  
+- `strtok(string, separator)` : `string` 을 `separator` 를 기준으로 자르는 함수
+
+  - 문자열을 자르고 그 잘라진 문자열의 포인터를 반환한다
+
+  ``` c
+  char hi[100] = "Hi my name is Joongchang Yang";
+  
+  // hi 문자열을 " " 기준으로 잘라서 잘린 문자열의 포인터를 반환
+  char* ptr = strtok(hi, " ");
+  
+  while (ptr != NULL) {
+      printf("자른 문자열 : %s\n", ptr);
+      printf("자른 문자열 포인터 : %d\n", ptr);
+      printf("자른 문자열 길이 : %d\n", strlen(ptr));
+      printf("\n");
+      
+      // NULL을 넣고 strtok를 해주어야 다음 잘린 문자열 포인터로 이동할 수 있다
+      ptr = strtok(NULL, " ");
+  }
+  
+  /*
+  실행 결과
+  
+  자른 문자열 : Hi
+  자른 문자열 포인터 : 18414040
+  자른 문자열 길이 : 2
+  
+  자른 문자열 : my
+  자른 문자열 포인터 : 18414043
+  자른 문자열 길이 : 2
+  
+  자른 문자열 : name
+  자른 문자열 포인터 : 18414046
+  자른 문자열 길이 : 4
+  
+  자른 문자열 : is
+  자른 문자열 포인터 : 18414051
+  자른 문자열 길이 : 2
+  
+  자른 문자열 : Joongchang
+  자른 문자열 포인터 : 18414054
+  자른 문자열 길이 : 10
+  
+  자른 문자열 : Yang
+  자른 문자열 포인터 : 18414065
+  자른 문자열 길이 : 4
+  */
+  ```
+
+  
