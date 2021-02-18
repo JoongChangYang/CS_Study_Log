@@ -45,6 +45,7 @@
 |   25   |            큐             |                [Queue](/DataStructure/Queue)                 |
 |        |       정렬 알고리즘       |     [SortingAlgorithm](/DataStructure/SortingAlgorithm)      |
 |   26   |         선택 정렬         | [SelectionSolt](/DataStructure/SortingAlgorithm#선택-정렬Selection-Sort) |
+|   26   |         삽입 정렬         | [InsertionSorlt](/DataStructure/SortingAlgorithm#삽입-정렬Insertion-sort) |
 
 
 
