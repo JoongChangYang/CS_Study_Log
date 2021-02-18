@@ -12,7 +12,7 @@
 - **가장 작은것** 을 선택해서 앞으로 보내는 정렬 기법
 - **가장 작은것** 을 선택하는데에 **N** 번 앞으로 보내는데에 **N** 번의 연산으로 **O(N<sup>2</sup>)** 의 시간복잡도를 가진다
 
-<img src="/Assets/SelectionSort.JPG" width="70%">
+<img src="Assets/SelectionSort.jpg" style = "float: left; width = 40%;">
 
 ``` c
 #define _CRT_SECURE_NO_WARNINGS
