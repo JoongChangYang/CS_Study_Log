@@ -36,13 +36,15 @@
 
 ### Data Structure
 
-|  번호  |           내용            |                            링크                            |
-| :----: | :-----------------------: | :--------------------------------------------------------: |
-|   20   |       자료구조 개요       | [HelloDataStructure](/DataStructure/HelloDataStructure.md) |
-| 21, 22 |        연결 리스트        |         [LinkedList](/DataStructure/LinkedList.md)         |
-|   23   |           스택            |              [Stack](/DataStructure/Stack.md)              |
-|   24   | 스택을 이용한 계산기 구현 |         [Calculator](/DataStructure/Calculator.md)         |
-|   25   |            큐             |               [Queue](/DataStructure/Queue)                |
+|  번호  |           내용            |                             링크                             |
+| :----: | :-----------------------: | :----------------------------------------------------------: |
+|   20   |       자료구조 개요       |  [HelloDataStructure](/DataStructure/HelloDataStructure.md)  |
+| 21, 22 |        연결 리스트        |          [LinkedList](/DataStructure/LinkedList.md)          |
+|   23   |           스택            |               [Stack](/DataStructure/Stack.md)               |
+|   24   | 스택을 이용한 계산기 구현 |          [Calculator](/DataStructure/Calculator.md)          |
+|   25   |            큐             |                [Queue](/DataStructure/Queue)                 |
+|        |       정렬 알고리즘       |     [SortingAlgorithm](/DataStructure/SortingAlgorithm)      |
+|   26   |         선택 정렬         | [SelectionSolt](/DataStructure/SortingAlgorithm#선택-정렬Selection-Sort) |
 
 
 
