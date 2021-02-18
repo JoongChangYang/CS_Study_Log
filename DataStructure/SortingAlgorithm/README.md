@@ -15,7 +15,6 @@
 <img src="Assets/SelectionSort.png" style = "float: left; width = 40%;">
 
 ``` c
-#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <limits.h>
 
@@ -78,9 +77,7 @@ int main(void) {
 <img src="Assets/InsertionSolt.png" style = "float: left; width = 40%;">
 
 ``` c
-#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <limits.h>
 
 int swap(int* a, int* b) {
 	int temp = *a;
