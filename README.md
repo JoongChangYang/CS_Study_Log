@@ -42,6 +42,7 @@
 | 21, 22 |        연결 리스트        |         [LinkedList](/DataStructure/LinkedList.md)         |
 |   23   |           스택            |              [Stack](/DataStructure/Stack.md)              |
 |   24   | 스택을 이용한 계산기 구현 |         [Calculator](/DataStructure/Calculator.md)         |
+|   25   |            큐             |               [Queue](/DataStructure/Queue)                |
 
 
 
