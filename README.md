@@ -44,8 +44,9 @@
 |   24   | 스택을 이용한 계산기 구현 |          [Calculator](/DataStructure/Calculator.md)          |
 |   25   |            큐             |                [Queue](/DataStructure/Queue)                 |
 |        |       정렬 알고리즘       |     [SortingAlgorithm](/DataStructure/SortingAlgorithm)      |
-|   26   |         선택 정렬         | [SelectionSolt](/DataStructure/SortingAlgorithm#선택-정렬Selection-Sort) |
-|   26   |         삽입 정렬         | [InsertionSorlt](/DataStructure/SortingAlgorithm#삽입-정렬Insertion-sort) |
+|   26   |         선택 정렬         | [SelectionSort](/DataStructure/SortingAlgorithm#선택-정렬Selection-Sort) |
+|   26   |         삽입 정렬         | [InsertionSort](/DataStructure/SortingAlgorithm#삽입-정렬Insertion-sort) |
+|   27   |          퀵 정렬          | [QuickSort](/DataStructure/SortingAlgorithm#퀵-정렬Qiuick-sort) |
 
 
 
