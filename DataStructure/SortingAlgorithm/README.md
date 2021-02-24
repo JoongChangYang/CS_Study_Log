@@ -4,7 +4,7 @@
 
 - [선택 정렬(Selection sort)](#선택-정렬Selection-Sort)
 - [삽입 정렬(Insertion sort)](#삽입-정렬Insertion-sort)
-- [퀵 정렬(Quick sort)](#퀵-정렬Qiuick-sort)
+- [퀵 정렬(Quick sort)](#퀵-정렬Qiuck-sort)
 
 
 
