@@ -75,7 +75,7 @@ int main(void) {
 - **들어갈 위치를 선택** 하는데에 **N번** , **선택하는 횟수** 로 **N번** 으로 **O(N<sup>2</sup>)** 의 시간 복잡도를 가짐
 - 시간 복잡도는 같지만 일반적으로 **선택 정렬(Selection sort)** 보다 빠르다
 
-<img src="Assets/InsertionSolt.png" style = "float: left; width = 40%;">
+<img src="Assets/InsertionSort.png" style = "float: left; width = 40%;">
 
 ``` c
 #include <stdio.h>
@@ -122,6 +122,89 @@ int main(void) {
 
 - **피벗** : 정렬 기준이 되는 숫자
 - **피벗** 을 기준으로 큰 값과 작은 값을 서로 교체하는 정렬 기법
-- 값을 **서로 교체** 하는데에 **N** 번, 엇갈린 경우 교체 이후에 원소가 반으로 나누어지므로 전체 원소를 나누는데에 평균적으로 **logN** 번이 소요되므로 평균적으로 **O(N log N)** 의 시간 복잡도를 가진다
+- 값을 **서로 교체** 하는데에 **N** 번, 엇갈린 경우 교체 이후에 원소가 반으로 나누어지므로 전체 원소를 나누는데에 평균적으로 **logN** 번이 소요되므로 평균적으로 **θ(N log N)** 의 시간 복잡도를 가진다
+- 퀵 정렬을 편향된 분할이 발생할 때 연산의 양이 **O(N<sup>2</sup>)** 이다 따라서 보통 실제로 퀵 정렬을 구현하지는 않고 **C++**의 **Algorithm** 라이브러리의 `sort()` 함수를 사용하여  **O(N log N)** 의 시간 복잡도를 보장하는 퀵정렬을 사용한다
 
+<img src="Assets/QuickSort.png" style = "float: left; width = 40%;">
+
+``` c
+#include <stdio.h>
+
+int arr[10] = { 1, 5, 7, 6, 2, 9, 8, 4, 10, 3 };
+
+void swap(int *a, int *b) {
+  int temp = *a;
+  *a = *b;
+  *b = temp;
+}
+
+void quickSort(int left, int right) {
+  if (left >= right) return; // 왼쪽과 오른쪽이 같거나 오른쪽이 더 작다면 원소가 하나이거나 없기때문에 정렬이 완료된 것으로 함수를 바로 빠져나온다
   
+  int pivot = left; // 피봇을
+  int i = left;
+  int j = right;
+  
+  // 피봇의 왼쪽에 피봇 보다 작은값, 오른쪽에 피봇보다 큰 값으로 모아준다
+  while (i <= j) { // 엇갈릴 때까지 반복
+    
+    // arr[i]가 피봇보다 작으면 잘 위치해 있는것으로 판단하고 i를 다음으로 이동
+    // arr[i]가 피봇보다 크면 피봇의 오른쪽에 위치해야 하므로 더이상 i를 이동시키지 않고 반복문 탈출
+    while (i <= right && arr[i] <= arr[pivot]) {
+      i++;
+    }
+    
+    // arr[j]가 피봇보다 크면 잘 위치해 있는것으로 판단하고 j를 다음으로 이동
+    // arr[j]가 피봇보다 작으면 피봇의 왼쪽에 위치해야 하므로 더이상 j를 이동시키지 않고 반복문 탈출
+    while (j > left && arr[j] >= arr[pivot]) {
+      j--;
+    }
+    
+    
+    if (i > j) {
+      // i와 j가 엇갈리면 피봇과 j의 위치를 바꿔주고 엇갈렸기 때문에 반복문 탈출
+      swap(&arr[pivot], &arr[j]);
+      
+    } else {
+      // 아직 i와 j가 엇갈리지 않았다면 i와 j의 위치를 서로 바꿔주고 다음 반복문 실행
+      swap(&arr[i], &arr[j]);
+    }
+  }
+  
+  // 피봇을 기준으로 다시 왼쪽과 오른쪽을 나누어 퀵정렬을 재귀적으로 호출한다
+  quickSort(left, j - 1);
+  quickSort(j + 1, right);
+  
+}
+
+void show(int size) {
+  for (int i = 0; i < size; i++) {
+    printf("%d ", arr[i]);
+  }
+  printf("\n");
+}
+
+int main(int argc, const char * argv[]) {
+  
+  int left = 0;
+  int size = sizeof(arr) / sizeof(int);
+  
+  printf("정렬 전: ");
+  show(size);
+  
+  quickSort(left, size - 1);
+  
+  printf("정렬 후: ");
+  show(size);
+  
+  /*
+   실행 결과
+   정렬 전: 1 5 7 6 2 9 8 4 10 3
+   정렬 후: 1 2 3 4 5 6 7 8 9 10
+   */
+  
+  return 0;
+}
+
+```
+
