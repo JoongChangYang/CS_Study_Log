@@ -5,6 +5,7 @@
 - [선택 정렬(Selection sort)](#선택-정렬Selection-Sort)
 - [삽입 정렬(Insertion sort)](#삽입-정렬Insertion-sort)
 - [퀵 정렬(Quick sort)](#퀵-정렬Quick-sort)
+- [계수 정렬(Counting sort)](#계수-정렬Counting-sort)
 
 
 
@@ -206,5 +207,66 @@ int main(int argc, const char * argv[]) {
   return 0;
 }
 
+```
+
+
+
+## 계수 정렬(Counting sort)
+
+- 크기를 기준으로 데이터의 개수를 세는 정렬 알고리즘
+- 각 데이터의 크기를 기준으로 분류하므로 **O(N)** 의 시간복잡도를 가진다
+- 데이터의 최대 크기를 알고 있어야함
+- 구현 방법
+  1. **데이터의 최대 크기만큼의 임시 배열(모든 값은 0으로 초기화 되어있어야 함)** 을 만들어 두고 **정렬할 배열** 에서 값을 꺼내 **임시 배열** 의 `index` 로 사용한다
+  2. **정렬할 배열** 에서 꺼낸 값을 **임시 배열** 의 `index` 로 접근해서 +1 해준다 (데이터의 갯수를 세는것)
+  3. **임시 배열** 을 순회 하며 출력하면 정렬된 값이 출력 된다
+
+
+
+``` c
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#define MAX_VALUE 10001
+
+int main(int argc, const char * argv[]) {
+  
+  int arr[MAX_VALUE] = {0, }; // 10001 크기의 배열 초기화
+  
+  int inputSize;
+  printf("입력할 숫자의 갯수: ");
+  scanf("%d", &inputSize);
+  
+  // 숫자를 입력 받을 때 마다 arr에 입력 받은 숫자를 index로 접근하여 해당 원소에 + 1 하며 원소의 숫자를 세어준다
+  for (int i = 0; i < inputSize; i++) {
+    int input;
+    printf("입력할 숫자: ");
+    scanf("%d", &input);
+    arr[input]++;
+  }
+  
+  // arr를 순회 하며 해당 index의 갯수만큼 index를 출력
+  for (int i = 0; i < MAX_VALUE; i++) {
+
+    while (arr[i] != 0) {
+      printf("%d ", i);
+      arr[i]--;
+    }
+
+  }
+  
+  /*
+   실행 결과
+   입력할 숫자의 갯수: 7
+   입력할 숫자: 12
+   입력할 숫자: 23
+   입력할 숫자: 32
+   입력할 숫자: 10
+   입력할 숫자: 2
+   입력할 숫자: 17
+   입력할 숫자: 12
+   2 10 12 12 17 23 32
+   */
+  return 0;
+}
 ```
 
