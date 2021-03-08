@@ -100,7 +100,7 @@ fclose(someFile); // 파일 닫기
    >
    > 경로 : **/[프로젝트폴더]/Debug/[파일]**
 
-   ![File_IO_Example1](https://github.com/JoongChangYang/TIL_C/blob/main/Assets/File_IO_Example1.PNG)
+   ![File_IO_Example1](Assets/File_IO_Example1.PNG)
 
 2. 소스코드 작성
 

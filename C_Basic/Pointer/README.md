@@ -10,7 +10,7 @@
 
 ### 개념
 
-![Pointer_Concept](https://github.com/JoongChangYang/TIL_C/blob/main/Assets/Pointer_Concept.png)
+<img src="Assets/Pointer_Concept.png" width="60%">
 
 - **포인터(Pointer)**는 메모리의 주소를 저장한다.
 

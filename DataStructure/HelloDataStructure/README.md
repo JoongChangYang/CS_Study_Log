@@ -88,7 +88,7 @@
     - **n<sup>2</sup>** : 약 1,000,000번의 연산
     - **n<sup>3</sup>** : 약 1,000,000,000번의 연산
     
-    <img src="https://github.com/JoongChangYang/TIL_C/blob/main/Assets/HelloDataStructure_TimeComplexity.PNG" width="30%">
+    <img src="Assets/HelloDataStructure_TimeComplexity.PNG" width="30%">
 
 
 #### 공간 복잡도(Space Complexity)

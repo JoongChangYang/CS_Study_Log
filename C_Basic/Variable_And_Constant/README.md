@@ -11,7 +11,7 @@
 
 ### 자료형(Data Type)
 
-![Data Type](https://github.com/JoongChangYang/TIL_C/blob/main/Assets/C_DataType.png)
+![Data Type](Assets/DataType.png)
 
 
 

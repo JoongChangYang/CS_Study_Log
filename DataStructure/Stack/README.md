@@ -104,11 +104,11 @@ int main(void) {
 
 - **PUSH**
 
-  <img src="https://github.com/JoongChangYang/TIL_C/blob/main/Assets/Stack_Linked_List_Push.PNG" width="70%">
+  <img src="Assets/Stack_Linked_List_Push.PNG" width="70%">
 
 - **POP**
 
-  <img src="https://github.com/JoongChangYang/TIL_C/blob/main/Assets/Stack_Linked_List_Pop.PNG" width="70%">
+  <img src="Assets/Stack_Linked_List_Pop.PNG" width="70%">
 
 ``` c
 #include <stdio.h>

@@ -96,7 +96,7 @@ int main(void) {
 - 연결 리스트의 시작 노드를 **헤드(Head)** 라고 하며 별도로 관리 한다
 - 다음 노드가 없는 **끝 노드** 의 다음 위치 값으로는 **NULL**을 넣는다
 
-<img src="https://github.com/JoongChangYang/TIL_C/blob/main/Assets/Single_Linked_List.PNG" width="70%">
+<img src="Assets/Single_Linked_List.PNG" width="70%">
 
 #### 기본 구현
 
@@ -144,7 +144,7 @@ int main(void) {
 
 #### 노드 삽입
 
-<img src="https://github.com/JoongChangYang/TIL_C/blob/main/Assets/Single_Linked_List_InsertNode.PNG" width="70%">
+<img src="Assets/Single_Linked_List_InsertNode.PNG" width="70%">
 
 ``` c
 void insertNode(Node* root, int data) {
@@ -176,7 +176,7 @@ void removeNode(Node* preNode) {
 - 양방향 연결 리스트는 **머리(Head)** 와 **꼬리(Tail)** 를 모두 가진다
 - 양방향 연결 리스트의 각 노드는 **앞 노드** 와 **뒤 노드** 의 정보를 모두 저장한다
 
-<img src="https://github.com/JoongChangYang/TIL_C/blob/main/Assets/Double_Linked_List.PNG" width="70%">
+<img src="Assets/Double_Linked_List.PNG" width="70%">
 
 #### 기본 구현
 
@@ -192,7 +192,7 @@ Node *head, *tail; // 연결리스트의 시작점과 끝점 노드
 
 #### 노드 삽입
 
-<img src="https://github.com/JoongChangYang/TIL_C/blob/main/Assets/Double_Linked_List_InsertNode.PNG" width="70%">
+<img src="Assets/Double_Linked_List_InsertNode.PNG" width="70%">
 
 ``` c
 // 오름차순 삽입 함수 예제코드
@@ -218,7 +218,7 @@ void insertNode(int data) {
 
 #### 노드 삭제
 
-<img src="https://github.com/JoongChangYang/TIL_C/blob/main/Assets/Double_Linked_List_RemoveNode.PNG" width="70%">
+<img src="Assets/Double_Linked_List_RemoveNode.PNG" width="70%">
 
 ``` c
 void removeNode(Node* removeNode) {
