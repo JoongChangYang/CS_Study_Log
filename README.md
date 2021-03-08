@@ -47,6 +47,8 @@
 |   26   |         선택 정렬         | [SelectionSort](/DataStructure/SortingAlgorithm#선택-정렬Selection-Sort) |
 |   26   |         삽입 정렬         | [InsertionSort](/DataStructure/SortingAlgorithm#삽입-정렬Insertion-sort) |
 |   27   |          퀵 정렬          | [QuickSort](/DataStructure/SortingAlgorithm#퀵-정렬Quick-sort) |
+|   28   |         계수 정렬         | [CountingSort](/DataStructure/SortingAlgorithm#계수-정렬Counting-sort) |
+|   29   |         기수 정렬         | [RadixSort](/DataStructure/SortingAlgorithm#기수-정렬Radix-sort) |
 
 
 

@@ -5,6 +5,8 @@
 - [선택 정렬(Selection sort)](#선택-정렬Selection-Sort)
 - [삽입 정렬(Insertion sort)](#삽입-정렬Insertion-sort)
 - [퀵 정렬(Quick sort)](#퀵-정렬Quick-sort)
+- [계수 정렬(Counting sort)](#계수-정렬Counting-sort)
+- [기수 정렬(Radix sort)](#기수-정렬Radix-sort)
 
 
 
@@ -206,5 +208,144 @@ int main(int argc, const char * argv[]) {
   return 0;
 }
 
+```
+
+
+
+## 계수 정렬(Counting sort)
+
+- 크기를 기준으로 데이터의 개수를 세는 정렬 알고리즘
+- 각 데이터의 크기를 기준으로 분류하므로 **O(N)** 의 시간복잡도를 가진다
+- 데이터의 최대 크기를 알고 있어야함
+- 구현 방법
+  1. **데이터의 최대 크기만큼의 임시 배열(모든 값은 0으로 초기화 되어있어야 함)** 을 만들어 두고 **정렬할 배열** 에서 값을 꺼내 **임시 배열** 의 `index` 로 사용한다
+  2. **정렬할 배열** 에서 꺼낸 값을 **임시 배열** 의 `index` 로 접근해서 +1 해준다 (데이터의 갯수를 세는것)
+  3. **임시 배열** 을 순회 하며 출력하면 정렬된 값이 출력 된다
+
+
+
+``` c
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#define MAX_VALUE 10001
+
+int main(int argc, const char * argv[]) {
+  
+  int arr[MAX_VALUE] = {0, }; // 10001 크기의 배열 초기화
+  
+  int inputSize;
+  printf("입력할 숫자의 갯수: ");
+  scanf("%d", &inputSize);
+  
+  // 숫자를 입력 받을 때 마다 arr에 입력 받은 숫자를 index로 접근하여 해당 원소에 + 1 하며 원소의 숫자를 세어준다
+  for (int i = 0; i < inputSize; i++) {
+    int input;
+    printf("입력할 숫자: ");
+    scanf("%d", &input);
+    arr[input]++;
+  }
+  
+  // arr를 순회 하며 해당 index의 갯수만큼 index를 출력
+  for (int i = 0; i < MAX_VALUE; i++) {
+
+    while (arr[i] != 0) {
+      printf("%d ", i);
+      arr[i]--;
+    }
+
+  }
+  
+  /*
+   실행 결과
+   입력할 숫자의 갯수: 7
+   입력할 숫자: 12
+   입력할 숫자: 23
+   입력할 숫자: 32
+   입력할 숫자: 10
+   입력할 숫자: 2
+   입력할 숫자: 17
+   입력할 숫자: 12
+   2 10 12 12 17 23 32
+   */
+  return 0;
+}
+```
+
+
+
+## 기수 정렬(Radix sort)
+
+- 자릿수를 기준으로 차례대로 데이터를 정렬하는 알고리즘
+- 각 데이터를 자릿수를 기준으로 분류하므로 가장 큰 자릿수를 **D** 라고 했을 때 **O(DN)** 의 시간 복잡도를 가짐
+
+``` c
+#include <stdio.h>
+#define MAX 10000
+
+void radixSort(int* arr, int n) {
+	int res[MAX]; // 자릿수 마다 정렬 결과를 담아줄 임시 배열
+	int maxValue = 0; // 최댓값
+	int exp = 1; // 자릿수
+
+	// 최대 자릿수를 찾기 위해 배열내 최대값인 원소를 찾아 maxValue에 할당
+	for (int i = 0; i < n; i++) {
+		if (arr[i] > maxValue) {
+			maxValue = arr[i];
+		}
+	}
+
+	// 1의 자리부터 최대값의 자릿수 까지 반복문을 돌린다
+	while (maxValue / exp > 0) {
+
+		// 해당 자릿수의 값을 담을 배열 {0...9}
+		int bucket[10] = { 0 };
+
+		// bucket에 해당 자릿수의 값의 갯수를 넣어준다
+		for (int i = 0; i < n; i++) {
+			bucket[(arr[i] / exp) % 10]++;
+		}
+
+		// bucket에서 이전 값을 다음 값에 더해주어 갯수를 누적 시켜준다
+		for (int i = 1; i < 10; i++) {
+			bucket[i] += bucket[i - 1];
+		}
+
+		// arr의 뒤에서부터 값을 꺼내 res에 할당
+		// 이때 res에 할당되는 인덱스는 arr의 값의 현재 정렬중인 자릿수의 값 - 1
+		for (int i = n - 1; i >= 0; i--) {
+			res[--bucket[(arr[i] / exp) % 10]] = arr[i];
+		}
+
+		// arr에 res의 값들을 옮겨담아준다
+		for (int i = 0; i < n; i++) {
+			arr[i] = res[i];
+		}
+
+		// 현재 자릿수의 정렬이 끝났으면 exp * 10 하여 다음 자릿수를 정렬할 준비를 한다
+		exp *= 10;
+
+	}
+
+}
+
+int main(void) {
+
+	int arr[10] = { 3, 27, 310, 22, 9, 29, 1000, 237, 38, 222 };
+	int n = sizeof(arr) / sizeof(int);
+	
+	radixSort(arr, n);
+
+	for (int i = 0; i < n; i++) {
+		printf("%d ", arr[i]);
+	}
+
+	/*
+	실행 결과
+	3 9 22 27 29 38 222 237 310 1000
+	*/
+
+	system("pause");
+	return 0;
+}
 ```
 
