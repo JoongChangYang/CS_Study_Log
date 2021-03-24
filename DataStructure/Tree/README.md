@@ -116,7 +116,6 @@
 - 포인터로 표현 가능
 
   ``` c
-  // 추가 예정
   typedef struct Node {
     int data; // 데이터 저장 변수
     struct Node *left; // 왼쪽 자식 노드 포인터
